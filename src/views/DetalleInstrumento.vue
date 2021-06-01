@@ -5,7 +5,7 @@
         <b-col>
           <img 
             
-            :src="'/images/' + instrumentoEncontrado.imagen"/>
+            :src="`data:image/png;base64,${instrumentoEncontrado.foto}`">
             <b-row >
                 <b-col >
                     <h2 class="minAltoImg" >Descripción</h2>
@@ -14,8 +14,12 @@
             </b-row>  
              <b-row>
             <b-col
-              ><b-button href="/productos" variant="primary"
-                >VOLVER</b-button
+              ><b-button href="/productos" variant="outline-primary"
+                >VOLVER</b-button>
+                <b-button href="/editar" variant="success"
+                >EDITAR</b-button
+
+                
               ></b-col>
           </b-row>   
         </b-col>
@@ -68,7 +72,7 @@ export default {
   methods: {
     async getInstrumentoXId() {
       const parametroId = this.$route.params.id;
-      const res = await fetch("http://localhost:8080/api/instrumento"+ parametroId);
+      const res = await fetch("http://localhost:8080/api/instrumento/"+ parametroId);
       const resJson = await res.json();
       console.log(resJson);
       this.instrumentoEncontrado = resJson

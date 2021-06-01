@@ -10,6 +10,11 @@
 
 </template>
 <script>
-export default {};
+export default {
+  name: 'Ubicacion',
+  components: {  
+   
+  }
+}
 </script>
 

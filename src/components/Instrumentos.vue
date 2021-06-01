@@ -6,7 +6,7 @@
       class="mb-2"
     >
       <b-card-img
-        :src="'/images/' + instrumentoParam.imagen"
+        :src="`data:image/png;base64,${instrumentoParam.foto}`"
         alt="Image"
         style="min-height: 200px; max-height: 200px"
       ></b-card-img>
@@ -42,5 +42,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+
